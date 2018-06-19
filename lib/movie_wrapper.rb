@@ -20,6 +20,18 @@ class MovieWrapper
     end
   end
 
+  # def self.new_movie(id)
+  #   url = BASE_URL + "movie/" + id + "?api_key=" + KEY
+  #   puts url
+  #   response = HTTParty.get(url)
+  #
+  #     movies = response["results"].map do |result|
+  #       self.construct_movie(result)
+  #     end
+  #     return movies
+  #   end
+  # end
+
   private
 
   def self.construct_movie(api_result)

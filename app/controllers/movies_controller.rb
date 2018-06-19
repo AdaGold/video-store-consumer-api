@@ -11,6 +11,17 @@ class MoviesController < ApplicationController
     render status: :ok, json: data
   end
 
+  def create
+    movie = Movie.new(movie_params)
+
+    if movie.save
+      render json: {
+        id: movie.id }, status: :ok
+    else
+      render json: { errors: movie.errors.messages }, status: :bad_request
+    end
+  end
+
   def show
     render(
       status: :ok,
@@ -22,6 +33,10 @@ class MoviesController < ApplicationController
   end
 
   private
+
+  def movie_params
+    return params.permit(:title, :overview, :release_date, :image_url)
+  end
 
   def require_movie
     @movie = Movie.find_by(title: params[:title])
