@@ -40,10 +40,6 @@ gem 'will_paginate'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-<<<<<<< HEAD
-=======
-
->>>>>>> 9fc5bba398ed831b3d2b743bf27b5be3ea307915
   gem 'dotenv-rails'
 end
 
