@@ -7,13 +7,11 @@ class MoviesController < ApplicationController
     else
       data = Movie.all
     end
-
     render status: :ok, json: data
   end
 
   def create
     movie = Movie.new(movie_params)
-
     if movie.save
       render json: {
         id: movie.id }, status: :ok
